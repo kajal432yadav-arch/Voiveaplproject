@@ -1,0 +1,28 @@
+﻿@page
+@model IndexModel
+
+<h2>Ask Sarvam AI</h2>
+
+<form method="post">
+
+    <textarea asp-for="Prompt"
+              rows="5"
+              cols="60"></textarea>
+
+    <br />
+    <br />
+
+    <button type="submit">
+        Ask AI
+    </button>
+
+</form>
+
+@if (!string.IsNullOrEmpty(Model.ResponseText))
+{
+    <hr />
+
+    <h3>Response</h3>
+
+    <pre>@Model.ResponseText</pre>
+}
