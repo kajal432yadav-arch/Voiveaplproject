@@ -19,6 +19,5 @@ RUN adduser --disabled-password --gecos "" appuser
 USER appuser
 
 COPY --from=build /app/publish .
-
 EXPOSE 8080
 ENTRYPOINT ["dotnet", "VoiceAPI.dll"]
